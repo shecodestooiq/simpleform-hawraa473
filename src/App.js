@@ -3,8 +3,8 @@ import HW from './components/Hw';
 
 function App() {
   return (
-    <>
-    </>
+    <div> <HW/>
+    </div>
   );
 }
 
