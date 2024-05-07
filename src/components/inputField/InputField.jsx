@@ -1,6 +1,6 @@
 import React from "react";
 
-const TextAreaField = ({ label, value, onChange, required }) => {
+const InputField = ({ label, value, onChange, required }) => {
   return (
     <div>
       <label>{label}</label> <br />
@@ -9,4 +9,4 @@ const TextAreaField = ({ label, value, onChange, required }) => {
   );
 };
 
-export default TextAreaField;
+export default InputField;
