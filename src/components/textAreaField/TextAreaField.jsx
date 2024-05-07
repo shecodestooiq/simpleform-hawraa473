@@ -1,13 +1,12 @@
-const TextAreaField = () => {
-    return ( 
-<div>
-    <label htmlFor="userMessage">{props.label}</label>
-    <textarea name="userMessage"  cols="30" rows="10"  value={props.value} required={props.required} 
-        onChange={(e)=> props.onChange(e.target.value)}></textarea>
-</div>
+import React from "react";
 
-     );
-}
- 
+const TextAreaField = ({ label, value, onChange, required }) => {
+  return (
+    <div>
+      <label>{label}</label> <br />
+      <textarea value={value} onChange={onChange} required={required} />
+    </div>
+  );
+};
+
 export default TextAreaField;
-

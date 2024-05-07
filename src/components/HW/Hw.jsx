@@ -1,23 +1,46 @@
-import { useState } from 'react';
-import InputField from './components/inputField/InputField';
-import TextAreaField from './components/textAreaField/TextAreaField';
-useState
 
-const Hw = () => { 
-    
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [message, setMessage] = useState("");
+import React, { useState } from 'react';
+import InputField from '../InputField/InputField'
+import TextAreaField from '../TextAreaField/TextAreaField';
 
-    return ( <form onSubmit={alert(name+email+message)}>
-<InputField label='Name' type='text'  value={name} onChange={setName} required='required' />
-<InputField  label='Email' type='email'  value={email} onChange={setEmail} required='required' />
-<TextAreaField  label='Message'value={message} onChange={setMessage} required='required' />
-<button type='submit'>Submit</button>
-    </form>
- 
-      );
-}
- 
-export default Hw;
+const HW = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert('Submitted:' + { name, email, message })
+    // console.log('Submitted:', { name, email, message });
+  };
+
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <InputField
+          label="Name"
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
+        <InputField
+          label="Email"
+          type="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        /> 
+        <TextAreaField
+          label="Message"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          required
+        /> 
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  );
+};
+
+export default HW;

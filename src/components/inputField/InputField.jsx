@@ -1,13 +1,12 @@
-const InputField = (props) => {
-    return ( 
-        <div>
-              <label htmlFor="userInfo">{props.label}</label>
-        <input type={props.type} name="userInfo" value={props.value} required={props.required} 
-        onChange={(e)=> props.onChange(e.target.value)} />  
-        </div>
-    
+import React from "react";
 
-      );
-}
- 
-export default InputField;
+const TextAreaField = ({ label, value, onChange, required }) => {
+  return (
+    <div>
+      <label>{label}</label> <br />
+      <input value={value} onChange={onChange} required={required} />
+    </div>
+  );
+};
+
+export default TextAreaField;
